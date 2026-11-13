@@ -1,0 +1,35 @@
+# Environment variables and API keys
+.env
+.env.*
+!.env.example
+backend/.env
+frontend/.env.local
+
+# Node.js
+node_modules/
+frontend/node_modules/
+
+# Next.js
+.next/
+frontend/.next/
+out/
+
+# Build files
+dist/
+build/
+
+# Go
+*.exe
+*.test
+*.out
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+gemini-test.json
+
+# OS files
+.DS_Store
+Thumbs.db

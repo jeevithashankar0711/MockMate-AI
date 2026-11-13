@@ -1,0 +1,172 @@
+
+@import "tailwindcss";
+
+/* ========================================
+   MockMate AI — Global Theme Styles
+   Tailwind CSS v4
+======================================== */
+
+:root {
+  color-scheme: light;
+
+  --background: #ffffff;
+  --foreground: #172033;
+
+  --card: #ffffff;
+  --card-foreground: #172033;
+
+  --muted: #f5f3ff;
+  --muted-foreground: #64748b;
+
+  --border: #e5e7eb;
+  --input: #ffffff;
+
+  --primary: #8b2cf5;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f3e8ff;
+  --secondary-foreground: #6b21a8;
+
+  --accent: #f5f3ff;
+  --accent-foreground: #7e22ce;
+
+  --success: #15803d;
+  --warning: #b45309;
+  --danger: #dc2626;
+
+  --background-gradient: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #faf5ff 50%,
+    #f5f3ff 100%
+  );
+
+  --shadow-color: 139 44 245;
+}
+
+html.dark {
+  color-scheme: dark;
+
+  --background: #0b1020;
+  --foreground: #f1f5f9;
+
+  --card: #151b2d;
+  --card-foreground: #f1f5f9;
+
+  --muted: #1b2238;
+  --muted-foreground: #a3adc2;
+
+  --border: #30384d;
+  --input: #151b2d;
+
+  --primary: #b46aff;
+  --primary-foreground: #ffffff;
+
+  --secondary: #2b1d45;
+  --secondary-foreground: #e9d5ff;
+
+  --accent: #211a38;
+  --accent-foreground: #d8b4fe;
+
+  --success: #4ade80;
+  --warning: #fbbf24;
+  --danger: #f87171;
+
+  --background-gradient: linear-gradient(
+    135deg,
+    #0b1020 0%,
+    #11152a 50%,
+    #171129 100%
+  );
+
+  --shadow-color: 180 106 255;
+}
+
+/* Base styles */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background-color: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background-gradient);
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* Consistent form controls */
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+input,
+textarea,
+select {
+  color: var(--foreground);
+  background-color: var(--input);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted-foreground);
+}
+
+/* Reusable theme-aware surfaces */
+
+.theme-card {
+  color: var(--card-foreground);
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.theme-muted {
+  color: var(--muted-foreground);
+  background-color: var(--muted);
+}
+
+.theme-border {
+  border-color: var(--border);
+}
+
+/* Keyboard accessibility */
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
